@@ -6,11 +6,17 @@
   "bin": {
     "service-generator": "./bin/cli.js"
   },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md"
+  ],
   "scripts": {
     "start": "node bin/cli.js",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run lint"
   },
   "keywords": [
     "cli",
@@ -24,6 +30,9 @@
   ],
   "author": "Your Name",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "commander": "^11.1.0",
     "chalk": "^4.1.2",

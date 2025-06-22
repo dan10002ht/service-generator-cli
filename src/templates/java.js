@@ -1,6 +1,6 @@
 function getJavaTemplates() {
   return {
-    'pom.xml': `<project xmlns="http://maven.apache.org/POM/4.0.0"
+    "pom.xml": `<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -126,7 +126,7 @@ function getJavaTemplates() {
     </build>
 </project>`,
 
-    'README.md': `# <%= serviceName %>
+    "README.md": `# <%= serviceName %>
 
 Đây là boilerplate mẫu cho một service Java sử dụng Spring Boot + gRPC với Clean Architecture pattern.
 
@@ -257,7 +257,7 @@ java -jar target/<%= packageName %>-1.0.0.jar
 2. **gRPC code không generate**: Chạy \`mvn clean compile\`
 3. **Test fail**: Kiểm tra Java version và dependencies`,
 
-    'src/main/proto/user.proto': `syntax = "proto3";
+    "src/main/proto/user.proto": `syntax = "proto3";
 
 package user;
 
@@ -302,7 +302,7 @@ message ListUsersResponse {
   int32 total = 2;
 }`,
 
-    'src/main/java/com/example/SampleJavaServiceApplication.java': `package com.example;
+    "src/main/java/com/example/SampleJavaServiceApplication.java": `package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -314,7 +314,7 @@ public class SampleJavaServiceApplication {
     }
 }`,
 
-    'src/main/java/com/example/controller/UserGrpcController.java': `package com.example.controller;
+    "src/main/java/com/example/controller/UserGrpcController.java": `package com.example.controller;
 
 import com.example.service.UserService;
 import com.example.model.User;
@@ -385,7 +385,7 @@ public class UserGrpcController extends UserServiceGrpc.UserServiceImplBase {
     }
 }`,
 
-    'src/main/java/com/example/service/UserService.java': `package com.example.service;
+    "src/main/java/com/example/service/UserService.java": `package com.example.service;
 
 import com.example.model.User;
 import com.example.repository.UserRepository;
@@ -415,7 +415,7 @@ public class UserService {
     }
 }`,
 
-    'src/main/java/com/example/repository/UserRepository.java': `package com.example.repository;
+    "src/main/java/com/example/repository/UserRepository.java": `package com.example.repository;
 
 import com.example.model.User;
 import org.springframework.stereotype.Repository;
@@ -445,7 +445,7 @@ public class UserRepository {
     }
 }`,
 
-    'src/main/java/com/example/model/User.java': `package com.example.model;
+    "src/main/java/com/example/model/User.java": `package com.example.model;
 
 public class User {
     private String id;
@@ -471,7 +471,7 @@ public class User {
     }
 }`,
 
-    'src/main/resources/application.yml': `server:
+    "src/main/resources/application.yml": `server:
   port: 8080
 
 grpc:
@@ -487,7 +487,7 @@ logging:
     com.example: DEBUG
     net.devh.boot.grpc: DEBUG`,
 
-    'src/test/java/com/example/UserServiceTest.java': `package com.example;
+    "src/test/java/com/example/UserServiceTest.java": `package com.example;
 
 import com.example.model.User;
 import com.example.service.UserService;
@@ -535,7 +535,7 @@ class UserServiceTest {
     }
 }`,
 
-    'google_checks.xml': `<?xml version="1.0"?>
+    "google_checks.xml": `<?xml version="1.0"?>
 <!DOCTYPE module PUBLIC
           "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
           "https://checkstyle.org/dtds/configuration_1_3.dtd">
@@ -547,7 +547,7 @@ class UserServiceTest {
 
     <!-- Excludes all 'module-info.java' files -->
     <module name="BeforeExecutionExclusionFileFilter">
-        <property name="fileNamePattern" value="module-info\.java$"/>
+        <property name="fileNamePattern" value="module-info.java$"/>
     </module>
 
     <!-- Checks for Size Violations. -->
@@ -632,8 +632,8 @@ class UserServiceTest {
     <module name="TodoComment"/>
     <module name="UpperEll"/>
 
-</module>`
+</module>`,
   };
 }
 
-module.exports = { getJavaTemplates }; 
+module.exports = { getJavaTemplates };
