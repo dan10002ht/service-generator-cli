@@ -1,6 +1,6 @@
 {
   "name": "service-generator-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool to generate microservice boilerplates for Java, Go, and JavaScript",
   "main": "index.js",
   "bin": {
