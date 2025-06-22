@@ -14,17 +14,20 @@ CLI tool để generate microservice boilerplates cho Java, Go, và JavaScript v
 ## 📦 Cài đặt
 
 ### Cài đặt globally
+
 ```bash
 npm install -g service-generator-cli
 ```
 
 ### Cài đặt locally
+
 ```bash
 npm install service-generator-cli
-npx service-generator new service --language=java --name=my-service
+npx service-generator new --language=java --name=my-service
 ```
 
 ### Từ source
+
 ```bash
 git clone https://github.com/your-username/service-generator-cli.git
 cd service-generator-cli
@@ -35,42 +38,46 @@ npm link
 ## 🎯 Sử dụng
 
 ### Interactive mode (Khuyến nghị)
+
 ```bash
-service-generator new service --interactive
+service-generator new --interactive
 ```
 
 ### Command line
+
 ```bash
 # Generate Java service
-service-generator new service --language=java --name=user-service
+service-generator new --language=java --name=user-service
 
 # Generate Go service
-service-generator new service --language=go --name=payment-service
+service-generator new --language=go --name=payment-service
 
 # Generate JavaScript service
-service-generator new service --language=js --name=notification-service
+service-generator new --language=js --name=notification-service
 
 # Specify output directory
-service-generator new service --language=java --name=my-service --output=/path/to/projects
+service-generator new --language=java --name=my-service --output=/path/to/projects
 ```
 
 ### Xem danh sách templates
+
 ```bash
 service-generator list
 ```
 
 ## 📋 Options
 
-| Option | Short | Description | Default |
-|--------|-------|-------------|---------|
-| `--language` | `-l` | Programming language (java, go, js) | java |
-| `--name` | `-n` | Service name | required |
-| `--output` | `-o` | Output directory | . |
-| `--interactive` | `-i` | Interactive mode | false |
+| Option          | Short | Description                         | Default  |
+| --------------- | ----- | ----------------------------------- | -------- |
+| `--language`    | `-l`  | Programming language (java, go, js) | java     |
+| `--name`        | `-n`  | Service name                        | required |
+| `--output`      | `-o`  | Output directory                    | .        |
+| `--interactive` | `-i`  | Interactive mode                    | false    |
 
 ## 🏗️ Generated Structure
 
 ### Java (Spring Boot + gRPC)
+
 ```
 user-service/
 ├── src/main/
@@ -89,6 +96,7 @@ user-service/
 ```
 
 ### Go (gRPC + HTTP Gateway)
+
 ```
 payment-service/
 ├── cmd/server/              # Entry point
@@ -107,6 +115,7 @@ payment-service/
 ```
 
 ### JavaScript (Node.js + Express + gRPC)
+
 ```
 notification-service/
 ├── src/
@@ -126,6 +135,7 @@ notification-service/
 ## 🔧 Development
 
 ### Setup development environment
+
 ```bash
 git clone https://github.com/your-username/service-generator-cli.git
 cd service-generator-cli
@@ -134,15 +144,17 @@ npm link
 ```
 
 ### Test locally
+
 ```bash
 # Test interactive mode
-service-generator new service --interactive
+service-generator new --interactive
 
 # Test specific language
-service-generator new service --language=java --name=test-service
+service-generator new --language=java --name=test-service
 ```
 
 ### Add new templates
+
 1. Create template file in `src/templates/`
 2. Add template function in `src/templates.js`
 3. Update generator logic in `src/generator.js`
@@ -150,6 +162,7 @@ service-generator new service --language=java --name=test-service
 ## 📚 Templates
 
 ### Java Template Features
+
 - Spring Boot 3.2.5
 - gRPC with Spring Boot starter
 - Clean Architecture pattern
@@ -158,6 +171,7 @@ service-generator new service --language=java --name=test-service
 - Docker ready
 
 ### Go Template Features
+
 - Go 1.21+
 - gRPC + HTTP Gateway
 - Clean Architecture
@@ -168,6 +182,7 @@ service-generator new service --language=java --name=test-service
 - Makefile with development commands
 
 ### JavaScript Template Features
+
 - Node.js 14+
 - Express.js
 - gRPC with @grpc/grpc-js
@@ -183,7 +198,7 @@ service-generator new service --language=java --name=test-service
 npm install -g service-generator-cli
 
 # 2. Generate service
-service-generator new service --interactive
+service-generator new --interactive
 
 # 3. Follow prompts
 # Choose language: Java
@@ -215,6 +230,7 @@ cd user-service
 5. Open Pull Request
 
 ### Development Guidelines
+
 - Follow existing code style
 - Add tests for new features
 - Update documentation
@@ -245,4 +261,4 @@ MIT License - see [LICENSE](LICENSE) file for details
 - **Languages**: 3 (Java, Go, JavaScript)
 - **Templates**: 50+ files per language
 - **Features**: gRPC, HTTP, Testing, Docker, CI/CD
-- **Architecture**: Clean Architecture, Repository Pattern 
+- **Architecture**: Clean Architecture, Repository Pattern
